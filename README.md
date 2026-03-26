@@ -62,6 +62,55 @@ python sensitivity.py
 
 ---
 
+---
+
+## 📂 Proje Yapısı (Project Hierarchy)
+
+```text
+ANN-for-Antenna-Design/
+├── docs/                   # 📚 Akademik ve Teknik Dokümantasyon
+│   ├── theory.md           # Maxwell Denklemleri & İletim Hattı Teorisi
+│   └── parameters.md       # Malzeme ve Boyut Seçim Kılavuzu
+├── assets/                 # 🎨 Görsel Materyaller ve Bannerlar
+├── config.py               # ⚙️ Merkezi Hiperparametre ve Yol Yönetimi
+├── generator.py            # 🧪 Veri Üretim Motoru (Transmission Line Model)
+├── model.py                # 🧠 Yapay Sinir Ağı Mimarisi (MLP)
+├── optimizer.py            # 🎯 Tersine Tasarım Optimizasyon Motoru
+├── sensitivity.py          # 📊 Tasarım Duyarlılık Analizi
+├── visualizer.py           # 📈 3D Topoloji ve Performans Görselleştirme
+├── main.py                 # 🚀 Ana Kontrol Ünitesi (CLI)
+├── GLOSSARY.md             # 📜 RF & EW Terimler Sözlüğü
+└── requirements.txt        # 📦 Gerekli Kütüphaneler
+```
+
+---
+
+## 🧠 Teknik Derin Bakış (Technical Deep Dive)
+
+### 📊 Veri Seti ve Gürültü Modeli
+Eğitim verileri, **Transmission Line Model** kullanılarak üretilir. Gerçek dünya RF ortamlarını simüle etmek için verilere `%2 % Gaussian Noise` eklenmiştir. Bu, modelin EM çözücü (HFSS/CST) varyasyonlarına karşı dayanıklılığını artırır.
+
+### 🧠 Model Mimarisi
+Sistem, `scikit-learn` tabanlı bir **Multilayer Perceptron (MLP)** kullanır:
+- **Giriş Katmanı:** 4 Nöron ($W, L, h, \epsilon_r$)
+- **Gizli Katmanlar:** [128, 64, 32] (ReLU aktivasyonu ile)
+- **Çıkış Katmanı:** 1 Nöron ($f_r$ - GHz)
+- **Regülarizasyon:** Overfitting'i önlemek için L2 Adam optimizer entegre edilmiştir.
+
+### 🎯 Tersine Tasarım Stratejisi
+Inverse design aşamasında, eğitilmiş model dondurulur ve **L-BFGS-B (Limited-memory Broyden–Fletcher–Goldfarb–Shanno with Boundaries)** algoritması kullanılarak hedef frekansa en yakın $W$ ve $L$ değerleri iteratif olarak bulunur.
+
+---
+
+## 🗺️ Gelecek Yol Haritası (Future Roadmap)
+
+- [ ] **Full-Wave Integration:** Üretilen tasarımları otomatik olarak `.aedt` veya `.cst` formatında dışa aktarma.
+- [ ] **Swarm Intelligence:** Optimizasyon motoruna PSO (Particle Swarm Optimization) desteği ekleme.
+- [ ] **Complex Patch Shapes:** Dairesel ve üçgen yamalar için model desteği.
+- [ ] **Gain Prediction:** Sadece rezonans değil, anten kazancı (Gain) tahmini ekleme.
+
+---
+
 ## 📚 Teknik Dokümantasyon (Technical Curriculum)
 
 Proje hakkında daha derinlemesine bilgi için aşağıdaki dokümanları inceleyin:

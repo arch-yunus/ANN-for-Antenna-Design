@@ -1,22 +1,26 @@
-# 📖 GLOSSARY (Sözlük)
+# ?? RF & Electronic Warfare (EW) Glossay / Terimler Sözlü?ü
 
-This glossary provides Turkish translations and explanations for the technical terms used in the **ANN-for-Antenna-Design** project.
+Bu sözlük, anten mühendisli?i, yapay zeka ve elektronik harp teknolojilerindeki temel kavramlar? içerir.
 
-| Term (En) | Terim (Tr) | Explanation (Tr) |
-| :--- | :--- | :--- |
-| **ANN (Artificial Neural Network)** | YSA (Yapay Sinir Ağı) | İnsan beyninin çalışma prensibini taklit eden algoritmik yapılar. |
-| **MLP (Multilayer Perceptron)** | Çok Katmanlı Algılayıcı | En temel ileri beslemeli yapay sinir ağı mimarisi. |
-| **Resonant Frequency** | Rezonans Frekansı | Antenin en verimli şekilde ışıma yaptığı frekans değeri. |
-| **Patch Antenna** | Yama Anten | Genellikle düzlemsel olan ve mikroşerit hatla beslenen anten türü. |
-| **Dielectric Constant** | Dielektrik Sabiti ($\epsilon_r$) | Malzemenin elektrik alanını depolama yeteneği; anten boyutlarını etkiler. |
-| **S-Parameters ($S_{11}$)** | S-Parametreleri | Antenin giriş portundaki yansıma katsayısı; empedans uyumunu gösterir. |
-| **Backpropagation** | Geri Yayılım | Hatanın çıkıştan girişe doğru dağıtılarak ağırlıkların güncellenmesi. |
-| **Activation Function** | Aktivasyon Fonksiyonu | Nöron çıkışını belirli bir aralığa veya formata sokan (ReLU, Sigmoid vb.) fonksiyon. |
-| **Universal Approximation** | Evrensel Yakınsama | Bir sinir ağının her türlü karmaşık fonksiyonu temsil edebilme yeteneği. |
-| **MSE (Mean Squared Error)** | OKS (Ortalama Karesel Hata) | Tahmin edilen ve gerçek değerler arasındaki farkın karesinin ortalaması. |
-| **MAE (Mean Absolute Error)** | OMH (Ortalama Mutlak Hata) | Tahmin edilen ve gerçek değerler arasındaki farkın mutlak değerinin ortalaması. |
-| **Cross Validation** | Çapraz Doğrulama | Veri setini parçalara bölerek modelin genelleme yeteneğini test etme yöntemi. |
-| **Overfitting** | Aşırı Öğrenme | Modelin sadece eğitim verisini ezberleyip yeni veride başarısız olması. |
+## 1. Anten Mühendisli?i ve RF
+- **W (Width):** Microstrip patch antenin geni?li?i. Giri? empedans?n? ve bant geni?li?ini etkiler.
+- **L (Length):** Antenin uzunlu?u. Rezonans frekans?n? belirleyen en kritik parametredir (~λ/2).
+- **h (Height):** Substrate (taban malzemesi) kal?nl???. Verimlili?i ve bant geni?li?ini do?rudan etkiler.
+- **er (Relative Permittivity):** Malzemenin dielektrik sabiti. Dalga boyunu ve anten boyutlar?n? belirler.
+- **f_r (Resonant Frequency):** Antenin EM enerjisini en verimli ?ekilde yayd???, geri dönü? kayb?n?n (Return Loss) minimum oldu?u frekans.
+- **Bandwidth (Bant Geni?li?i):** Antenin belirli performans kriterlerini (örne?in VSWR < 2) kar??lad??? frekans aral???.
+
+## 2. Yapay Zeka ve Optimizasyon
+- **MLP (Multilayer Perceptron):** Girdiler (W, L, h, er) ile ç?kt? (f_r) aras?ndaki lineer olmayan ili?kiyi modelleyen çok katmanl? yapay sinir a??.
+- **Inverse Design (Ters Tasar?m):** İstenen performans hedefine (f_r) ula?mak için optimal tasarım parametrelerinin (W, L) yapay zeka veya optimizasyon ile bulunmas?.
+- **Sensitivity Analysis (Duyarl?l?k Analizi):** Girdi de?i?kenlerindeki küçük de?i?imlerin ç?kt? (f_r) üzerindeki etkisini ölçme s?reci.
+- **L-BFGS-B:** S?n?rlanm?? (bounded) optimizasyon problemleri için kullan?lan verimli bir quasi-Newton algoritmas?.
+
+## 3. Elektronik Harp (EW/EH) ve Taktiksel Boyut
+- **Signal Intelligence (SIGINT):** Dü?man anten sistemlerinin frekans ve konum tespiti.
+- **Jamming (Kar??t?rma):** Dü?man haberle?me frekansLAR?na yüksek enerjili EM dalgas? göndererek ileti?imi koparma.
+- **Stealth (Düsü?k Görünürlük):** Anten tasar?m?n?n Radar Kesit Alan?n? (RCS) minimize ederek radar sistemlerinden kaçma yetene?i.
+- **Spread Spectrum:** Sinyalin geni? bir frekans band?na yay?larak tespiti ve kar??t?rmay? zorla?t?rd??? teknik.
 
 ---
-*Created by Bahattin Yunus Çetin*
+**Haz?rlayan:** [Bahattin Yunus Çetin](https://github.com/bahattinyunus)
